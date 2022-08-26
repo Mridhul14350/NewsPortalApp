@@ -14,6 +14,13 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Run Project
+
+1. Clone the project.
+2. Run command 'npm install' in CMD to install the necessary packages.
+3. Run command 'ng serve'.
+4. Go to 'http://localhost:4200/' in browser.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
