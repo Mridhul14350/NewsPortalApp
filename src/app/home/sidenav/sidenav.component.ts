@@ -44,9 +44,9 @@ export class SidenavComponent implements OnInit {
 
   getSectionList() {
     this.sidenaveServie.getSectionList().subscribe((resp: any) => {
-      console.log('getSectionList : ', resp);
+      // console.log('getSectionList : ', resp);
       this.sidenavList = resp.results;
-      console.log('sidenavList : ', this.sidenavList);
+      // console.log('sidenavList : ', this.sidenavList);
     });
   }
   getNavDisplayName(nav: any) {

@@ -25,24 +25,24 @@ export class ArticleComponent implements OnInit {
     this.newsSection = 'All';
     this.getArticleList();
     this.sidenaveServie.sectionSubject.subscribe((section: string) => {
-      console.log('section : ', section);
+      // console.log('section : ', section);
       if (typeof section == 'string') this.newsSection = section;
 
       this.articleListFiltered = this.articleList.filter((article, index) => {
-        console.log('article : ', article);
+        // console.log('article : ', article);
         return article['section'].toLowerCase() == section.toLowerCase()
           ? true
           : false;
       });
-      console.log(' this.articleListFiltered ', this.articleListFiltered);
+      // console.log(' this.articleListFiltered ', this.articleListFiltered);
     });
   }
 
   getArticleList() {
     this.articleService.getArticleList().subscribe((resp: any) => {
-      console.log('getArticles : ', resp);
+      // console.log('getArticles : ', resp);
       this.articleList = resp.results;
-      console.log('articleList : ', this.articleList);
+      // console.log('articleList : ', this.articleList);
       this.articleListFiltered = JSON.parse(JSON.stringify(this.articleList));
     });
   }

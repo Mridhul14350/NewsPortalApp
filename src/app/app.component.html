@@ -9,7 +9,7 @@
 
   </div>
 
-  <div class="navbar-nav nav-right">
+  <div *ngIf="!IsLoggedIn" class="navbar-nav nav-right">
     <a class="nav-item nav-link" routerLink="/account/profile" routerLinkActive="active">Profile</a>
     <a class="nav-item nav-link" (click)="logout()">Logout</a>
   </div>

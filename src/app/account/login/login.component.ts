@@ -28,7 +28,10 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    this.accountService.logout();
+  }
 
   // convenience getter for easy access to form fields
   get f() {
