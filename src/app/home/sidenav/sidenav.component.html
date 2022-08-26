@@ -1,0 +1,3 @@
+<a mat-list-item (click)="onSectionClick(nav['section'])" routerLink="." *ngFor="let nav of sidenavList">
+  {{getNavDisplayName(nav)}}
+</a>

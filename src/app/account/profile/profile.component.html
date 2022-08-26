@@ -1,0 +1,54 @@
+<div class="profile-container">
+  <div class="card">
+    <h4 class="card-header">Profile</h4>
+    <div class="card-body">
+      <form [formGroup]="form">
+        <div class="form-group">
+          <label for="firstName">Display Name</label>
+          <input type="text" formControlName="displayName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['displayName'].errors }" />
+          <div *ngIf="submitted && f['displayName'].errors" class="invalid-feedback">
+            <div *ngIf="f['displayName'].errors['required']">Display Name is required</div>
+          </div>
+        </div>
+        <div class="form-group pt-3">
+          <label for="username">Email / Username</label>
+          <input type="email" formControlName="email" class="form-control" email="true"
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+          <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors['required']">Email is required</div>
+            <div *ngIf="f['email'].errors['email']">Please enter a valid Email id.</div>
+
+          </div>
+        </div>
+        <div class="form-group pt-3">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+          <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+            <div *ngIf="f['password'].errors['required']">Password is required</div>
+            <div *ngIf="f['password'].errors['minlength']">Password must be at least 5 characters</div>
+            <div *ngIf="f['password'].errors['maxlength']">Password must not be greater than 20 characters</div>
+          </div>
+        </div>
+        <div class="form-group pt-3">
+          <button [disabled]="loading" (click)="onSubmit()" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Save
+          </button>
+
+          <!-- <a routerLink="../login" class="btn btn-link">Cancel</a> -->
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+<div class="col-md-6 btn-left">
+  <div class="card">
+    <button [disabled]="loading" (click)="deleteAccount()" class="btn btn-warning">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+      Delete Account
+    </button>
+  </div>
+</div>

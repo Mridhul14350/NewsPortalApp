@@ -1,0 +1,26 @@
+<div class="article-container">
+
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+
+  <div class="navbar-nav nav-right">
+    <a class="nav-item nav-link" (click)="goToProfile()">Profile</a>
+    <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+
+</nav>
+
+
+<div class="card">
+  <h4 class="card-header">News Article <span *ngIf="newsSection != 'All'"> : {{newsSection}} </span></h4>
+  <div class="card-body">
+    <div class="article-row" *ngFor="let article of articleListFiltered">
+      <div class="article-title">
+        {{article['title']}}
+      </div>
+      <div>{{article['abstract']}}</div>
+
+    </div>
+  </div>
+
+</div>
+</div>
